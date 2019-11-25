@@ -90,6 +90,14 @@ app.patch('/update/:postID', async (req,res)=>{
 
 });
 
+if(process.env.NODE.ENV === "production"){
+    app.use(express.static('NewsWeatherApp/build'));
+
+    app.get('*', (req,res)=>{
+        res.sendFile(path.resolve(__dirname,"client","build","index.html"))
+    })
+
+}
 
 //connect to MangoDB
 mongoose.connect('mongodb+srv://user_123:123@cluster0-txqzp.mongodb.net/test?retryWrites=true&w=majorityCo'
