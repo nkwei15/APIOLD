@@ -92,13 +92,16 @@ app.patch('/update/:postID', async (req,res)=>{
 if(process.env.NODE_ENV === "production"){
     app.use(express.static('NewsWeatherApp/build'));
 
-    app.get('*', (req,res)=>{
-        if (!url.startsWith('/app/')) // since we're on local windows
-            url = url.substring(1);
-        res.sendFile(path.resolve(__dirname,"NewsWeatherApp","build","index.html"))
+    app.get('/*', (req,res)=>{
+    res.sendFile(path.resolve(__dirname,"NewsWeatherApp","build","index.html"))
     })
-
 }
+else {
+    app.use(express.static(path.join(__dirname, '/NewsWeatherApp/public')));
+    app.get("/*", function(req, res) {
+      res.sendFile(path.join(__dirname, "./NewsWeatherApp/public/index.html"));
+    });
+  }
 
 //connect to MangoDB
 mongoose.connect('mongodb+srv://user_123:123@cluster0-txqzp.mongodb.net/test?retryWrites=true&w=majorityCo'
