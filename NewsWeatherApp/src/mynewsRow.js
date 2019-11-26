@@ -50,7 +50,6 @@ const MyNews = ({id,title,description,link,date,image}) => {
             catch(e){
                 alert("Deleted Unsuccessful");
             }
-		
     }
 
     
