@@ -13,6 +13,7 @@ const Post = require('../model/post')
 //cors is a library use to fetching data cross domain
 const cors = require('cors')
 
+var path = require('path');
 
 app.use(cors());
 
