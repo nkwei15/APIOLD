@@ -233,7 +233,7 @@ function EditNews(){
 
       <br></br>
       
-      <button class="col-sm-12" className="update-button" type="submit">Update</button>
+      <button class="col-sm-12" className="update-button" type="submit"><Link to={{ pathname: '/MyNews'}}>Update</Link></button>
      
      </form>
   
