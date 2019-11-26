@@ -32,13 +32,13 @@ const App = () => {
   </nav>
 
   <Switch>
-    <Route path="/MyNews">
+    <Route exact path="/MyNews">
       <MyNews />
     </Route>
-    <Route path="/Weather">
+    <Route exact path="/Weather">
       <Weather />
     </Route>
-    <Route path='/EditNews/:id'>
+    <Route exact path='/EditNews/:id'>
       <EditNews />
     </Route>
     <Route path="/">
@@ -184,7 +184,7 @@ function EditNews(){
       "description": description
     }
 
-   
+   try{
   fetch('/update/'+last[2], {
           method: 'PATCH',
           body: JSON.stringify(databody),
@@ -195,6 +195,10 @@ function EditNews(){
       .then(res => res.json())
       .then(data => console.log(data));
       alert("Update Successful");
+    }
+    catch(e){
+      alert("Update Unsuccessful");
+    }
    
   }
   
