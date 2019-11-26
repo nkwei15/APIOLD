@@ -42,7 +42,7 @@ const MyNews = ({id,title,description,link,date,image}) => {
             fetch("/delete/" + id, requestOptions).then((response) => {
               return response.json();
             }).then((result) => {
-                
+                window.location.reload();
               });
 
               alert("Deleted Successful");
@@ -67,7 +67,7 @@ const MyNews = ({id,title,description,link,date,image}) => {
        <a href={link} class="link" role="button" >{link}</a>
        <p>{date}</p>
        <button style={buttonEdit} onClick={() => handleEdit(id)} ><Link to={{ pathname: '/EditNews/'+id }}>Edit</Link></button>
-       <button style={buttonDelete} className="delete-button" onClick={() => handleDelete(id,title,description,link,date,image)} type="submit"><Link to={{ pathname: '/MyNews'}}>Delete</Link></button>
+       <button style={buttonDelete} className="delete-button" onClick={() => handleDelete(id,title,description,link,date,image)} type="submit">Delete</button>
        </div>
        </div>
        </div>
