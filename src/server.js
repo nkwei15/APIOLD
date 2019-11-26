@@ -13,8 +13,6 @@ const Post = require('../model/post')
 //cors is a library use to fetching data cross domain
 const cors = require('cors')
 
-var path = require('path');
-
 app.use(cors());
 
 app.use(bodyParser.json())
@@ -95,6 +93,8 @@ if(process.env.NODE_ENV === "production"){
     app.use(express.static('NewsWeatherApp/build'));
 
     app.get('*', (req,res)=>{
+        if (!url.startsWith('/app/')) // since we're on local windows
+            url = url.substring(1);
         res.sendFile(path.resolve(__dirname,"NewsWeatherApp","build","index.html"))
     })
 
