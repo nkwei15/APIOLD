@@ -97,6 +97,7 @@ if(process.env.NODE_ENV === "production"){
     })
 
 }
+app.use('/feedback', feedbackRouter);
 
 //connect to MangoDB
 mongoose.connect('mongodb+srv://user_123:123@cluster0-txqzp.mongodb.net/test?retryWrites=true&w=majorityCo'
