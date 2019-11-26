@@ -32,14 +32,17 @@ const App = () => {
   </nav>
 
   <Switch>
-    <Route exact path="/MyNews" component={MyNews}/>
+    <Route path="/MyNews" component={MyNews}/>
 
-    <Route exact path="/Weather" component={Weather}/>
-  
-    <Route exact path='/EditNews/:id'component={EditNews}/>
-     
-    <Route exact path="/" component={MalaysiaNews}/>
-     
+    <Route path="/Weather">
+      <Weather />
+    </Route>
+    <Route path='/EditNews/:id'>
+      <EditNews />
+    </Route>
+    <Route path="/">
+      <MalaysiaNews />
+    </Route>
   </Switch>
 </div>
 </Router>
@@ -110,7 +113,7 @@ function MalaysiaNews() {
   );
 }
 
-const MyNews=()=> {
+function MyNews() {
 
   const[news,setNews] = useState([]);
   
