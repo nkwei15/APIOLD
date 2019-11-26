@@ -19,28 +19,29 @@ const App = () => {
         <a>Malaysia News And Weather</a>
       </li>
       <li>
-        <Link to="/">Malaysia News</Link>
+        <Link to="https://malaysia-news-weather-api.herokuapp.com/">Malaysia News</Link>
       </li>
       <li>
-        <Link to="/MyNews">My News</Link>
+        <Link to="https://malaysia-news-weather-api.herokuapp.com/MyNews">My News</Link>
       </li>
       <li>
-        <Link to="/Weather">Malaysia Weather Check</Link>
+        <Link to="https://malaysia-news-weather-api.herokuapp.com/Weather">Malaysia Weather Check</Link>
       </li>
      
     </ul>
   </nav>
 
   <Switch>
-    <Route path="/MyNews" component={MyNews}/>
-
-    <Route path="/Weather">
+    <Route path="https://malaysia-news-weather-api.herokuapp.com/MyNews">
+      <MyNews />
+    </Route>
+    <Route path="https://malaysia-news-weather-api.herokuapp.com/Weather">
       <Weather />
     </Route>
-    <Route path='/EditNews/:id'>
+    <Route path='https://malaysia-news-weather-api.herokuapp.com/EditNews/:id'>
       <EditNews />
     </Route>
-    <Route path="/">
+    <Route path="https://malaysia-news-weather-api.herokuapp.com/">
       <MalaysiaNews />
     </Route>
   </Switch>
