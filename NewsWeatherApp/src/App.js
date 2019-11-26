@@ -110,7 +110,7 @@ function MalaysiaNews() {
   );
 }
 
-function MyNews() {
+const MyNews=()=> {
 
   const[news,setNews] = useState([]);
   
