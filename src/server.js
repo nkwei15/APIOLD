@@ -93,14 +93,14 @@ if(process.env.NODE_ENV === "production"){
     app.use(express.static('NewsWeatherApp/build'));
 
     app.get('*', (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"NewsWeatherApp","build","index.html"))
+    res.sendFile(path.join(__dirname,"NewsWeatherApp","build","index.html"))
     })
 
 }
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/NewsWeatherApp/build/index.html'));
-  });
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '/NewsWeatherApp/build/index.html'));
+//   });
 
 //connect to MangoDB
 mongoose.connect('mongodb+srv://user_123:123@cluster0-txqzp.mongodb.net/test?retryWrites=true&w=majorityCo'
