@@ -32,18 +32,14 @@ const App = () => {
   </nav>
 
   <Switch>
-    <Route exact path="/MyNews">
-      <MyNews />
-    </Route>
-    <Route exact path="/Weather">
-      <Weather />
-    </Route>
-    <Route exact path='/EditNews/:id'>
-      <EditNews />
-    </Route>
-    <Route path="/">
-      <MalaysiaNews />
-    </Route>
+    <Route exact path="/MyNews" component={MyNews}/>
+
+    <Route exact path="/Weather" component={Weather}/>
+  
+    <Route exact path='/EditNews/:id'component={EditNews}/>
+     
+    <Route exact path="/" component={MalaysiaNews}/>
+     
   </Switch>
 </div>
 </Router>
@@ -204,12 +200,12 @@ function EditNews(){
   
   return (
     <div className="EditNews">
-    <p>{last[2]}</p>
+    <p>.</p>
 
     <form onSubmit={getUpdate} className="edit-form">
 
     <img  height="200" width="200" src={news.image} alt=""/>
-
+    
       <label class="col-sm-12">Title :</label>
       
       <textarea rows = "5" cols = "60"  class="col-sm-12" type="text"
